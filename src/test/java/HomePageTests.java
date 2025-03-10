@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,7 @@ public class HomePageTests {
     }
 
     @Test
+    @DisplayName("Открытие bonigarcia.dev/selenium-webdriver-java")
     void openHomePageTest()
     {
         String actualTitle = driver.getTitle();
@@ -78,7 +80,7 @@ public class HomePageTests {
     @Test
     void openChapterThreeMouseOverTest()
     {
-        List<WebElement> pageLinks = driver.findElements(By.xpath("//*[@class = 'btn btn-outline-primary mb-2']"));
+        List<WebElement> pageLinks = driver.findElements(By.xpath("//h5[text() = 'Chapter 3. WebDriver Fundamentals']/../*[@class = 'btn btn-outline-primary mb-2']"));
         pageLinks.get(3).click();
 
         String mouseOverUrl = "mouse-over.html";
@@ -105,7 +107,7 @@ public class HomePageTests {
     @Test
     void openChapterThreeDrawingInCanvasTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'draw-in-canvas.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 3. WebDriver Fundamentals']/../a[@href = 'draw-in-canvas.html']")).click();
 
         String drawingInCanvasUlr = "draw-in-canvas.html";
         String currentUrl = driver.getCurrentUrl();
@@ -118,7 +120,7 @@ public class HomePageTests {
     @Test
     void openChapterThreeLoadingImagesTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'loading-images.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 3. WebDriver Fundamentals']/../a[@href = 'loading-images.html']")).click();
 
         String loadingImagesUrl = "loading-images.html";
         String currentUrl = driver.getCurrentUrl();
@@ -131,7 +133,7 @@ public class HomePageTests {
     @Test
     void openChapterThreeSlowCalculatorTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'slow-calculator.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 3. WebDriver Fundamentals']/../a[@href = 'slow-calculator.html']")).click();
 
         String slowCalculatorUrl = "slow-calculator.html";
         String currentUrl = driver.getCurrentUrl();
@@ -144,7 +146,7 @@ public class HomePageTests {
     @Test
     void openChapterFourLongPageTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'long-page.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 4. Browser-Agnostic Features']/../a[@href = 'long-page.html']")).click();
 
         String longPageUrl = "long-page.html";
         String currentUrl = driver.getCurrentUrl();
@@ -157,7 +159,7 @@ public class HomePageTests {
     @Test
     void openChapterFourInfiniteScrollTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'infinite-scroll.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 4. Browser-Agnostic Features']/../a[@href = 'infinite-scroll.html']")).click();
 
         String infiniteScrollUrl = "infinite-scroll.html";
         String currentUrl = driver.getCurrentUrl();
@@ -170,7 +172,7 @@ public class HomePageTests {
     @Test
     void openChapterFourShadowDomTest()
     {
-        driver.findElement(By.xpath("//a[@href = 'shadow-dom.html']")).click();
+        driver.findElement(By.xpath("//h5[text() = 'Chapter 4. Browser-Agnostic Features']/../a[@href = 'shadow-dom.html']")).click();
 
         String shadowDomUrl = "shadow-dom.html";
         String currentUrl = driver.getCurrentUrl();
