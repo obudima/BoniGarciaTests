@@ -2,10 +2,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
 
@@ -18,7 +21,9 @@ public class HomePageTests {
 
     @BeforeEach
     void setup(){
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
 
         driver.get(BASE_URL);
         driver.manage().window().maximize();
@@ -36,6 +41,19 @@ public class HomePageTests {
     {
         String actualTitle = driver.getTitle();
         assertEquals("Hands-On Selenium WebDriver with Java", actualTitle);
+    }
+
+    @ParameterizedTest(name = "Открытие ссылки {0} / {1}")
+    @CsvFileSource(resources = "/testdata.csv", numLinesToSkip = 1)
+    void openLinksByXPath(String chapterName, String title, String url)
+    {
+        driver.findElement(By.xpath("//h5[text() = '"+chapterName+"']/../a[@href = '"+ url +"']")).click();
+
+        String currentUrl = driver.getCurrentUrl();
+        WebElement actualTitle = driver.findElement(By.className("display-6"));
+
+        assertEquals(BASE_URL + url,currentUrl);
+        assertEquals(title, actualTitle.getText());
     }
 
     @Test
@@ -195,6 +213,7 @@ public class HomePageTests {
         assertEquals("Cookies", title.getText());
     }
 
+    // FRAMES
     @Test
     void openChapterFourFramesTest()
     {
@@ -289,6 +308,7 @@ public class HomePageTests {
         assertEquals("Get user media", title.getText());
     }
 
+    // Пустой тайтл
     @Test
     void openChapterFiveMultilanguageTest()
     {

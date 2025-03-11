@@ -1,0 +1,26 @@
+chapterName,title,url
+Chapter 3. WebDriver Fundamentals,Web form,web-form.html
+Chapter 3. WebDriver Fundamentals,Navigation example,navigation1.html
+Chapter 3. WebDriver Fundamentals,Dropdown menu,dropdown-menu.html
+Chapter 3. WebDriver Fundamentals,Mouse over,mouse-over.html
+Chapter 3. WebDriver Fundamentals,Drag and drop,drag-and-drop.html
+Chapter 3. WebDriver Fundamentals,Drawing in canvas,draw-in-canvas.html
+Chapter 3. WebDriver Fundamentals,Loading images,loading-images.html
+Chapter 3. WebDriver Fundamentals,Slow calculator,slow-calculator.html
+Chapter 4. Browser-Agnostic Features,This is a long page,long-page.html
+Chapter 4. Browser-Agnostic Features,Infinite scroll,infinite-scroll.html
+Chapter 4. Browser-Agnostic Features,Shadow DOM,shadow-dom.html
+Chapter 4. Browser-Agnostic Features,Cookies,cookies.html
+Chapter 4. Browser-Agnostic Features,IFrame,iframes.html
+Chapter 4. Browser-Agnostic Features,Dialog boxes,dialog-boxes.html
+Chapter 4. Browser-Agnostic Features,Web storage,web-storage.html
+Chapter 5. Browser-Specific Manipulation,Geolocation,geolocation.html
+Chapter 5. Browser-Specific Manipulation,Notifications,notifications.html
+Chapter 5. Browser-Specific Manipulation,Get user media,get-user-media.html
+Chapter 5. Browser-Specific Manipulation,Console logs,console-logs.html
+Chapter 7. The Page Object Model (POM),Login form,login-form.html
+Chapter 7. The Page Object Model (POM),Slow login form,login-slow.html
+Chapter 8. Testing Framework Specifics,Random calculator,random-calculator.html
+Chapter 9. Third-Party Integrations,Download files,download.html
+Chapter 9. Third-Party Integrations,A/B Testing,ab-testing.html
+Chapter 9. Third-Party Integrations,Data types,data-types.html
