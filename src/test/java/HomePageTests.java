@@ -92,7 +92,7 @@ public class HomePageTests {
 
     @Test
     @DisplayName("Открытие всех страницх во всех разделах")
-    void openAllLinks() throws InterruptedException{
+    void openAllLinks() {
         int qtyLinks = 0;
         List<WebElement> chapters = driver.findElements(By.cssSelector("h5.card-title"));
         for (WebElement chapter : chapters) {
