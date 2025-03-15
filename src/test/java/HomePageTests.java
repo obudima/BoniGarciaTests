@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -91,7 +92,8 @@ public class HomePageTests {
     }
 
     @Test
-    @DisplayName("Открытие всех страницх во всех разделах")
+    @DisplayName("Открытие всех страниц во всех разделах")
+    @Description("Пример с урока 5: крутой поиск всех разделов и страниц")
     void openAllLinks() {
         int qtyLinks = 0;
         List<WebElement> chapters = driver.findElements(By.cssSelector("h5.card-title"));
@@ -100,9 +102,7 @@ public class HomePageTests {
             qtyLinks +=links.size();
             System.out.println(chapter.getText());
             for (WebElement link : links){
-                System.out.println(link.getText());
                 link.click();
-//                Thread.sleep(1000);
                 driver.navigate().back();
             }
         }
@@ -112,15 +112,15 @@ public class HomePageTests {
 
     @Test
     @DisplayName("Пример с cssSelector")
+    @Description("Пример с урока 5: cssSelector, поиск всех разделов")
     void classesTest(){
         List<WebElement> chapters = driver.findElements(By.cssSelector(".btn.btn-outline-primary.mb-2"));
         assertEquals(27, chapters.size());
     }
 
-    // ДЗ локаторы для всех элементов на web form
-
     @Test
     @DisplayName("Локаторы на странице Chapter 3. WebDriver Fundamentals / Web form")
+    @Description("Домашнее задание урок 5")
     void locatorsWebForm() throws InterruptedException {
         driver.findElement(By.xpath("//h5[text() = '"+"Chapter 3. WebDriver Fundamentals"+"']/../a[@href = '"+ "web-form.html" +"']")).click();
 
